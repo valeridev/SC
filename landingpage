@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Sinead O'Connor| RIP" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@700&family=Roboto:wght@400;900&display=swap"
+            rel="stylesheet" />
+
+        <title>Sinead O'Connor| RIP</title>
+        <style>
+            :root {
+                --primary-font: "Roboto", sans-serif;
+                --header-font: "Playfair Display", serif;
+                --sub-heading-font: "Poppins", sans-serif;
+                --primary-color: whitesmoke;
+                --secondary-color: black;
+                --primary-hover-color: rgba(255, 255, 255, 0.4);
+                --secondary-hover-color: rgba(0, 0, 0, 0.4);
+            }
+
+            html {
+                scroll-behavior: smooth;
+            }
+
+            .container {
+                max-width: 1600px;
+                margin: 0 auto;
+                font-family: var(--primary-font);
+                background-color: var(--primary-color);
+            }
+
+            section {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            header {
+
+                background-image: linear-gradient(rgba(39, 32, 68, 0.7),
+                        rgba(39, 32, 68, 0.7));
+
+                text-align: center;
+
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 100%;
+                margin: 0 auto;
+
+                padding: 20% 0;
+            }
+
+
+
+
+
+
+            h1 {
+                font-family: var(--header-font);
+                font-size: 100px;
+                margin: 10px auto;
+            }
+
+            h2 {
+                font-family: var(--primary-font);
+                font-weight: 300;
+                font-size: 32px;
+            }
+
+            h3 {
+                font-family: var(--sub-heading-font);
+                font-weight: 700;
+                font-size: 20px;
+                text-transform: uppercase;
+                letter-spacing: 5px;
+            }
+
+            header a {
+                color: var(--secondary-color);
+                font-family: var(--sub-heading-font);
+                font-size: 14px;
+                letter-spacing: 3px;
+                text-decoration: none;
+                text-transform: uppercase;
+                border: none;
+                background-color: var(--primary-color);
+                padding: 16px 32px;
+                display: inline-block;
+                margin-top: 30px;
+            }
+
+            header a:hover {
+                color: var(--primary-color);
+                background-color: var(--primary-hover-color);
+                transition: ease-in-out 300ms;
+            }
+
+            main {
+                margin: 40px 0;
+                text-align: center;
+            }
+
+            main h1 {
+                font-size: 48px;
+            }
+
+            main h3 {
+                font-size: 13px;
+            }
+
+            .videos a {
+                color: var(--primary-color);
+                font-family: var(--sub-heading-font);
+                font-size: 14px;
+                letter-spacing: 3px;
+                text-decoration: none;
+                text-transform: uppercase;
+                border: none;
+                background-color: var(--secondary-color);
+                padding: 16px 32px;
+                margin: 10px;
+                display: inline-block;
+            }
+
+            .videos a:hover {
+                color: var(--secondary-color);
+                background-color: var(--secondary-hover-color);
+                transition: ease-in-out 300ms;
+            }
+
+            main img {
+                width: 90%;
+                margin: 0 auto;
+            }
+
+            footer {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                    url();
+                background-size: cover;
+                background-repeat: no-repeat;
+
+                filter: grayscale(1);
+                color: var(--primary-color);
+                padding: 60px 0;
+            }
+
+            footer .grid {
+                grid-column-gap: 40px;
+            }
+
+            footer h1 {
+                font-size: 24px;
+            }
+
+            footer a {
+                color: var(--primary-color);
+            }
+
+            footer a:hover {
+                color: var(--hover-color);
+                transition: ease-in-out 100ms;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .grid {
+                display: grid;
+                grid-column-gap: 20px;
+            }
+
+            .grid-footer {
+                grid-template-columns: 1fr 2fr 1fr;
+            }
+
+            .grid-2-columns {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .grid-3-even-columns {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .websites {
+                margin-top: 60px;
+            }
+
+            .card {
+                position: relative;
+                aspect-ratio: 1 / 1;
+                background-color: var(--secondary-color);
+                transition: transform 1500ms;
+                transform-style: preserve-3d;
+            }
+
+            .card-container:hover>.card {
+                transform: rotatey(180deg);
+            }
+
+            .front,
+            .back {
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                font-size: 30px;
+                text-decoration: none;
+                color: var(--primary-color);
+                font-family: var(--sub-heading-font);
+                letter-spacing: 3px;
+                text-transform: uppercase;
+                backface-visibility: hidden;
+            }
+
+            .back {
+                transform: rotateY(180deg);
+            }
+
+            .card a {
+                font-size: 42px;
+                color: var(--primary-color);
+            }
+
+            .gallery {
+                padding: 10px 0px;
+                border-radius: 5px;
+            }
+
+            .gallery-cell {
+                width: 66%;
+                aspect-ratio: 16 / 9;
+                margin: 10px auto;
+                border-radius: 5px;
+                counter-increment: gallery-cell;
+            }
+
+            .gallery-cell:before {
+                display: block;
+                text-align: center;
+                content: counter(gallery-cell);
+                line-height: 400px;
+                font-size: 80px;
+                color: white;
+            }
+
+            .about {
+                text-align: end;
+            }
+
+            @media (max-width: 900px) {
+                header {
+                    padding: 10% 0;
+                }
+
+                h1 {
+                    font-size: 42px;
+                }
+
+                h2 {
+                    font-size: 18px;
+                }
+
+                h3 {
+                    font-size: 12px;
+                }
+
+                header a {
+                    font-size: 10px;
+                    letter-spacing: 2px;
+                    padding: 10px 20px;
+                    margin-top: 10px;
+                }
+
+                main {
+                    margin: 10px 0px;
+                }
+
+                footer {
+                    text-align: center;
+                    padding: 0 10px;
+                }
+
+                .about {
+                    text-align: center;
+                }
+
+                .websites {
+                    margin-top: 40px;
+                }
+
+                .grid {
+                    grid-template-columns: 1fr;
+                    grid-row-gap: 3px;
+                }
+
+                .about h1,
+                .websites h1,
+                .videos h1,
+                footer h1 {
+                    font-size: 24px;
+                }
+
+                .front,
+                .back {
+                    text-align: center;
+                    font-size: 14px;
+                }
+
+                .card a {
+                    font-size: 20px;
+                }
+
+                .card {
+                    aspect-ratio: 5 / 1;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <h3>Nothing compares to you</h3>
+            <h1>Sinead O'Connor</h1>
+            <h2>
+                Irish singer and musician
+            </h2>
+            <a href="#more">Learn More</a>
+
+        </header>
+
+        <div class="container">
+
+
+
+
+            <main>
+
+                <section class="about" id="more">
+                    <div class="grid grid-2-columns">
+                        <div class="column">
+
+                            <h3>about</h3>
+                            <h1>Sinead O'Connor</h1>
+                            <p>Sinead O'Connor is a famous Irish singer-songwriter known for her powerful voice and
+                                emotional performances. Her song
+                                'Nothing Compares 2 U' deeply impacted me during a celebration at Cultura Inglesa,
+                                school of English in Rio de Janeiro, in the
+                                90s. It sparked my love for
+                                learning English and inspired me to travel and explore the world. Her music played a
+                                significant role in shaping my
+                                life's journey. For this reason, I created this page as a tribute to Sinead O'Connor and
+                                her profound influence on my
+                                life. Through this platform, I hope to share her music and story with others who may
+                                also find inspiration and
+                                connection in her songs.
+                            </p>
+                        </div>
+                        <div class="column">
+                            <img src="O'Connor.png" alt="O'Connor" />
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="videos">
+                    <h3>watch</h3>
+                    <h1>Top Music</h1>
+
+                    <p>
+                        In Memoriam: Remembering Senea O'Connor - A Beacon of Light
+                    </p>
+                    <a href="https://www.youtube.com/channel/UCaJmMC7W6kU1QVaa1xb-2Hg" target="_blank">Go To YouTube
+                        Channel</a>
+                    <div class="gallery js-flickity" data-flickity-options='{"wrapAround": true} '>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/8_XcgGnultg"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/i6gAwOLzCEU"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/saLTfYz9iQk"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/me6uiEJlIHs"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/0G9YPvsG_c4"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen></iframe>
+                    </div>
+                </section>
+                <section class="websites">
+                    <div class="grid grid-3-even-columns">
+                        <div class="card-container">
+                            <div class="column card">
+                                <div class="front">
+                                    Live Performance
+                                </div>
+                                <div class="back">
+                                    <a href="https://youtu.be/NAOKzvL8dgk" target="_blank">
+                                        Watch Now</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <div class="column card">
+                                <div class="front">Share the Love</div>
+                                <div class="back">
+                                    <a href="https://twitter.com/SineadOConnor" target="_blank">RIP</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-container">
+                            <div class="column card">
+                                <div class="front">
+                                    Fan Club
+                                </div>
+                                <div class="back">
+                                    <a href="https://www.facebook.com/sineadoconnorfans/" target="_blank">L🤍VE</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <section class="grid grid-footer">
+                    <div class="column">
+                        <h1>More Info</h1>
+                        <ul>
+                            <li>
+                                <a href="https://en.wikipedia.org/wiki/Sin%C3%A9ad_O%27Connor"
+                                    target="_blank">Wikipedia</a>
+                            </li>
+                            <br />
+                            <li>
+                                <a href="https://www.sineadoconnor.com/" target="_blank">Official Site</a>
+                            </li>
+                            <br />
+                            <li><a href="https://www.facebook.com/sineadoconnorfans/">Sinéad O’Connor Fans on
+                                    Facebook</a></li>
+                        </ul>
+                    </div>
+                    <section class="about" id="about"></section>
+                    <div class="column">
+                        <h1>About Me</h1>
+
+                        <p>
+                            As a Brazilian native working in Education in the UK, I have a strong bond with my homeland
+                            and a drive to
+                            make a positive difference in the lives of Brazilian children. Brazil, as a developing
+                            nation, confronts specific
+                            challenges such as high school dropout rates and limited access to quality education.
+                            Motivated by this context, my
+                            mission is to ignite a passion for coding in Brazilian kids and equip them with the skills
+                            to shape their own futures.
+                            You can read more about my <a href="https://spontaneous-daifuku-a0a74c.netlify.app/"
+                                target="_blank">vision</a> and connect with me.
+                        </p>
+                    </div>
+                    <div class="column">
+
+                        <h1>About this Website</h1>
+
+                        <p>
+                            This page is dedicated in memory of Sinead O'Connor, whose music inspired my love for
+                            learning and ignited my passion
+                            for making a difference.
+
+                        </p>
+                    </div>
+                </section>
+            </footer>
+        </div>
+        <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    </body>
+
+</html>
